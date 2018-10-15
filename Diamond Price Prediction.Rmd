@@ -1,0 +1,52 @@
+---
+title: 'Course Project: Shiny Application and Reproducible - Diamond Price Prediction'
+author: "Amit kumar"
+date: "October 15, 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Overview
+This presentation contains documentation for the Diamond price prediction application. The application can be found [here](https://kumar-amit0502.shinyapps.io/myapp/)
+
+This application it is building linear regression model using **diamonds** data set and is predicting the price of a diamond depending of its properties.The application allows the user to select:
+
+- **Carat**
+- **Cut**
+- **Color**
+- **Clarity**
+
+Builds a plot and gives predicted price of the diamond.
+
+## Data used
+The data used for this application is `diamonds` data set, which is part of `ggplot2` package.
+
+This data set contains the information about 53940 diamonds with 10 variables:
+```{r echo=FALSE}
+library(ggplot2)
+```
+
+```{r echo=FALSE}
+summary(diamonds)
+
+```
+
+## Shiny Application files
+
+#### The application is build using Shiny package and the source code is in 2 files:
+
+- `ui.R` [View](https://github.com/kumar-amit05/Developing-Data-Products-Project/blob/master/ui.R)
+- `server.R` [View](https://github.com/kumar-amit05/Developing-Data-Products-Project/blob/master/server.R)
+
+Both files can be found here: [GitHub repo](https://github.com/kumar-amit05/Developing-Data-Products-Project)
+
+## Application functionality
+
+The application is drawing plot of diamonds in the `diamonds` data set distributed by their size (carat) and price ($). The regression line is shown on the plot as well. 
+
+By selecting specific features of the diamond (carat, cut, clarity, color) the user is able to sub select the data set and the regression is recalculated based only on the diamonds in the data set that share the same features. If no features are selected the regression model is using all diamonds in the data set.
+
+
